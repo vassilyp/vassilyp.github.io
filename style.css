@@ -51,7 +51,7 @@ nav ul li a::after {
     content: '';
     width: 0;
     height: 3px;
-    background: #ff004f;
+    background: #90adbb;
     position: absolute;
     left: 0;
     bottom: -6px;
@@ -78,5 +78,19 @@ nav ul li a:hover::after {
     margin-top: 5%;
 }
 
- /* --------- frontpage ---------- */
+/* --------- frontpage ---------- */
 
+/* --------- about-me ---------- */
+
+#about {
+    width: 100%;
+    height: 100vh;
+}
+
+#about img {
+    max-width: 300px;
+}
+
+/* -------- about-me ----------- */
+
+/* --------- frontpage ---------- */
