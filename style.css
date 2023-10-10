@@ -1,3 +1,6 @@
+/* FOR SIZING: use em for font size, and %, vh, vw for margins/padding/etc */
+
+
 /* --------- frontpage ---------- */
 * {
     margin: 0;
@@ -85,12 +88,52 @@ nav ul li a:hover::after {
 #about {
     width: 100%;
     height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    padding: 10%;
 }
 
 #about img {
-    max-width: 300px;
+    height: 60vh;
+    
+}
+
+#about > .text {
+    max-width: 40%;
+    font-size: x-large;
+}
+
+#about > .text > .about-me-title {
+    margin-bottom: 2vh;
+}
+
+#about > .text > p { 
+    margin-top: 1rem;
 }
 
 /* -------- about-me ----------- */
 
-/* --------- frontpage ---------- */
+/* --------- portfolio ---------- */
+
+#portfolio {
+    width: 100%;
+    height: 100vh;
+}
+
+/* --------- portfolio ---------- */
+
+/* --------- skills ---------- */
+
+#skills {
+    width: 100%;
+    height: 100vh;
+}
+
+/* --------- skills ---------- */
+
+/* --------- contact-me ---------- */
+
+/* --------- contact-me ---------- */
