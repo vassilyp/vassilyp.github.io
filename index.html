@@ -13,22 +13,22 @@
   <body>
 	  <script src="index.js"></script>
 
+    <!-- Navigation at the top -->
+    <div id="navbar" class="sticky">
+      <nav>
+        <img src="resources/smaller-logo.png" class="logo">
+        <ul>
+          <li><a href="/#">Home</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#portfolio">Portfolio</a></li>
+          <li><a href="/#skills">Skills</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
     <!-- Name section: catch the audiences attention! -->
     <div id="frontpage">
-      <!-- Navigation at the top -->
-      <div id="navbar">
-        <nav>
-          <img src="resources/smaller-logo.png" class="logo">
-          <ul>
-            <li><a href="/#">Home</a></li>
-            <li><a href="/#about">About</a></li>
-            <li><a href="/#portfolio">Portfolio</a></li>
-            <li><a href="/#skills">Skills</a></li>
-            <li><a href="/#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-
       <div class="frontpage-text">
         <p>Hi, I'm</p>
         <h1>Vassily<br>Petrousevitch</h1>
@@ -61,39 +61,41 @@
 
     
     <div id="portfolio">
-        <div id="portfolio-container">
-            <div class="portfolio-item">
-                <h1>Video Game</h1>
-                <p>Short description of video game</p>
-                <a href="https://github.com"><i class="fa fa-github"></i></a>
-            </div>
-
-            <div class="portfolio-item">
-                <h1>This website</h1>
-                <p>Short description of this website</p>
-                <a href="https://github.com"><i class="fa fa-github"></i></a>
-            </div>
+      <div id="portfolio-container">
+        <div class="portfolio-item">
+          <img src="resources/mountain_photo.jpg">
+          <h1>Video Game</h1>
+          <p>Short description of video game</p>
+          <a href="https://github.com"><i class="fa fa-github"></i></a>
         </div>
 
-        <button>See full archive -></button>
+        <div class="portfolio-item">
+          <img src="resources/mountain_photo.jpg">
+          <h1>This website</h1>
+          <p>Short description of this website</p>
+          <a href="https://github.com"><i class="fa fa-github"></i></a>
+        </div>
+      </div>
+
+      <button>See full archive -></button>
     </div>
 
     <!-- Skills -->
     <div id="skills">
-        <div class="work">
-            <h3>Web services</h3>
-            <p>Drupal, Docker, Vue.js, Cypress, Twig, JSON, HTML/CSS, JS, Version Control</p>
-        </div>
+      <div class="work">
+        <h3>Web services</h3>
+        <p>Drupal, Docker, Vue.js, Cypress, Twig, JSON, HTML/CSS, JS, Version Control</p>
+      </div>
 
-        <div class="school">
-            <h3>School</h3>
-            <p>Java, C, C++, Verilog, ARM Assembly, Python, JS, Algo/Data Structures, SQL, Oracle, MongoDB</p>
-        </div>
+      <div class="school">
+        <h3>School</h3>
+        <p>Java, C, C++, Verilog, ARM Assembly, Python, JS, Algo/Data Structures, SQL, Oracle, MongoDB</p>
+      </div>
 
-        <div class="personal">
-            <h3>Personal</h3>
-            <p>Python, JS, C#, Monogame</p>
-        </div>
+      <div class="personal">
+        <h3>Personal</h3>
+        <p>Python, JS, C#, Monogame</p>
+      </div>
     </div>
 
     <!-- Contact Info + Resume -->
