@@ -144,19 +144,36 @@ body {
     padding: 10%;
 }
 
-/* Define the portfolio item info here */
 .portfolio-item {
-    max-width: 15vw; 
+    max-width: 30vw;
+    padding: 5px;
+
+    margin: auto;
+    border: 2px solid whitesmoke;
+    border-radius: 8px;
 }
 
 .portfolio-item > img {
     height: auto;
     width: 100%;
+    border-radius: 8px;
 }
 
-#portfolio-container > div {
-    margin: auto;
+.portfolio-text {
+    display: flex;
+    justify-content: space-between;
 }
+
+.portfolio-text > div:last-child {
+    margin: auto 5px;
+}
+
+.portfolio-text > div > a {
+    text-decoration: none;
+    color: #90adbb;
+}
+
+/* TODO: split in half horizontally so that pic isn't huge*/
 
 /* --------- portfolio ---------- */
 
