@@ -3,16 +3,23 @@
 
 /* ---------- NAVBAR ----------- */
 .sticky {
-    position: -webkit-sticky;
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 100%;
 }
 
 nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding-right: 10px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+
+    background-color: #90adbb;
 }
 
 .logo {
@@ -38,7 +45,8 @@ nav ul li a::after {
     content: '';
     width: 0;
     height: 3px;
-    background: #90adbb;
+    /* background: #90adbb; */
+    background-color: #080808;
     position: absolute;
     left: 0;
     bottom: -6px;
@@ -67,7 +75,7 @@ body {
 
 #frontpage {
     width: 100%;
-    height: 100vh;
+    height: 60vh;
 }
 
 #navbar {
@@ -97,17 +105,19 @@ body {
 
 #about {
     width: 100%;
-    height: 100vh;
+    height: 120vh;
 
     display: flex;
-    flex-direction: row;
-    /* justify-content: space-between; */
-    
+    flex-direction: row;    
     padding: 10%;
 }
 
 #about img {
-    height: 60vh;
+    max-width: 80%;
+    min-width: 300px;
+
+    /* height: auto;
+    width: auto; */
     border-radius: 8px;
 }
 
@@ -117,8 +127,7 @@ body {
 }
 
 #about > .text {
-    max-width: 40%;
-    font-size: x-large;
+    font-size: x-large
 }
 
 #about > .text > .about-me-title {
@@ -127,6 +136,19 @@ body {
 
 #about > .text > p { 
     margin-top: 1rem;
+}
+
+@media screen and (max-width: 1100px) {
+    #about > .text {
+        font-size: large;
+    }
+}
+
+/* TODO: change this */
+@media screen and (max-width: 800px) {
+    #about > .text {
+        font-size: small;
+    }
 }
 
 /* -------- about-me ----------- */
@@ -138,30 +160,35 @@ body {
     height: 100vh;
 }
 
+#portfolio > h1 {
+    margin-left: 10%;
+}
+
 #portfolio-container {
     display: flex;
     flex-direction: row;
-    padding: 10%;
+    margin: 5% 0 2% 0;
 }
 
 .portfolio-item {
     max-width: 30vw;
-    padding: 5px;
+    min-width: 250px;
 
     margin: auto;
-    border: 2px solid whitesmoke;
+    border: 3px solid whitesmoke;
     border-radius: 8px;
 }
 
 .portfolio-item > img {
     height: auto;
     width: 100%;
-    border-radius: 8px;
+    /* border-radius: 4px; */
 }
 
 .portfolio-text {
     display: flex;
     justify-content: space-between;
+    margin: 10px;
 }
 
 .portfolio-text > div:last-child {
@@ -171,6 +198,19 @@ body {
 .portfolio-text > div > a {
     text-decoration: none;
     color: #90adbb;
+}
+
+#portfolio > button {
+    /* size + shape of button */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 0 auto;
+    width: 80%;
+    padding: 5px 0 5px 0;
+
+    background-color: #080808;
+    color: whitesmoke;
 }
 
 /* TODO: split in half horizontally so that pic isn't huge*/
