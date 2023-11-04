@@ -1,5 +1,18 @@
 /* FOR SIZING: use em/rem for font size, and %, vh, vw for margins/padding/etc */
 
+* {
+    margin: 0;
+    padding: 0;
+    /* font-family: 'Poppins', sans-serif; */
+    box-sizing: border-box;
+}
+
+body {
+    background: #1d1d1d;
+    color: whitesmoke;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
 
 /* ---------- NAVBAR ----------- */
 .sticky {
@@ -61,21 +74,11 @@ nav ul li a:hover::after {
 
 
 /* --------- frontpage ---------- */
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
-}
 
-body {
-    background: #080808;
-    color: #fff;
-}
 
 #frontpage {
     width: 100%;
-    height: 60vh;
+    height: 71vh;
 }
 
 #navbar {
@@ -104,128 +107,94 @@ body {
 /* --------- about-me ---------- */
 
 #about {
-    width: 100%;
-    height: 120vh;
-
-    display: flex;
-    flex-direction: row;    
-    padding: 10%;
-}
-
-#about img {
-    max-width: 80%;
-    min-width: 300px;
-
-    /* height: auto;
-    width: auto; */
-    border-radius: 8px;
-}
-
-#about div {
-    margin-left: 5vw;
-    margin-right: 5vw;
-}
-
-#about > .text {
-    font-size: x-large
-}
-
-#about > .text > .about-me-title {
-    margin-bottom: 2vh;
-}
-
-#about > .text > p { 
-    margin-top: 1rem;
-}
-
-@media screen and (max-width: 1100px) {
-    #about > .text {
-        font-size: large;
-    }
-}
-
-/* TODO: change this */
-@media screen and (max-width: 800px) {
-    #about > .text {
-        font-size: small;
-    }
-}
-
-/* -------- about-me ----------- */
-
-/* --------- portfolio ---------- */
-
-#portfolio {
-    width: 100%;
-    height: 100vh;
-}
-
-#portfolio > h1 {
-    margin-left: 10%;
-}
-
-#portfolio-container {
-    display: flex;
-    flex-direction: row;
-    margin: 5% 0 2% 0;
-}
-
-.portfolio-item {
-    max-width: 30vw;
-    min-width: 250px;
-
-    margin: auto;
-    border: 3px solid whitesmoke;
-    border-radius: 8px;
-}
-
-.portfolio-item > img {
-    height: auto;
-    width: 100%;
-    /* border-radius: 4px; */
-}
-
-.portfolio-text {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px;
-}
-
-.portfolio-text > div:last-child {
-    margin: auto 5px;
-}
-
-.portfolio-text > div > a {
-    text-decoration: none;
+    padding: 80px;
     color: #90adbb;
 }
 
-#portfolio > button {
-    /* size + shape of button */
+.row {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto 0 auto;
-    width: 80%;
-    padding: 5px 0 5px 0;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 
-    background-color: #080808;
+.about-col-1 {
+    flex-basis: 35%;
+}
+
+.about-col-1 img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.about-col-2 {
+    flex-basis: 60%;
+}
+
+.subtitle { 
+    font-size: 60px;
+    /* font-weight: 600; */
+}
+
+.about-col-2 p {
+    font-size: 24px;
+    padding-top: 16px;
+    color: whitesmoke;
+
+    /* I've set line-height = 4/3 font-size */
+    line-height: 32px;  
+}
+
+.tab-titles {
+    display: flex;
+    margin: 20px 0 40px;
+}
+
+.tab-links {
+    margin-right: 50px;
+    font-size: 18px;
+    /* TODO: idk whether font weight does anything */
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-links::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #90adbb;
+    position: absolute;
+    left: 0;
+    bottom: -8px; 
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after {
+    width: 50%;
+}
+
+.tab-contents ul li {
+    list-style: none;
+    margin: 10px 0;
     color: whitesmoke;
 }
 
-/* TODO: split in half horizontally so that pic isn't huge*/
-
-/* --------- portfolio ---------- */
-
-/* --------- skills ---------- */
-
-#skills {
-    width: 100%;
-    height: 100vh;
+.tab-contents ul li span {
+    color: #90adbb;
+    font-size: 14px;
+    line-height: 28px;
 }
 
-/* --------- skills ---------- */
+.tab-contents {
+    display: none;
+}
 
-/* --------- contact-me ---------- */
+.tab-contents.active-tab {
+    display: block;
+}
 
-/* --------- contact-me ---------- */
+
+/* -------- about-me ----------- */
+
+/* --------- portfolio --------- */
+

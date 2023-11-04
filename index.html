@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-	  <script src="index.js"></script>
-
     <!-- Navigation at the top -->
     <div id="navbar" class="sticky">
       <nav>
@@ -20,14 +18,14 @@
         <ul>
           <li><a href="/#">Home</a></li>
           <li><a href="/#about">About</a></li>
+          <!-- <li><a href="/#services">Services</a></li> -->
           <li><a href="/#portfolio">Portfolio</a></li>
-          <li><a href="/#skills">Skills</a></li>
           <li><a href="/#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
 
-    <!-- Name section: catch the audiences attention! -->
+    <!-- Frontpage -->
     <div id="frontpage">
       <div class="frontpage-text">
         <p>Hi, I'm</p>
@@ -36,85 +34,65 @@
       </div>
     </div>
 
-    <!-- Introduction: introduce myself, show best picture -->
+    <!-- About me -->
     <div id="about">
-      <!-- Picture -->
-      <div>
-        <img src="resources/mountain_photo.jpg">
-      </div>
-      <!-- Text -->
-      <div class="text">
-        <h2 class="about-me-title">About me</h2>
-        <p>
-          I first found out that coding was fun when making a game for my high school capstone project. 
-          Now, I am a 4th-year Computer Engineering student at UBC, 
-          who enjoys working on unique and challenging projects.
-        </p>
-        <p>
-          I currently work at UBC IT Web Services, where I fix websites. 
-        </p>
-        <p>
-          In my free time, I enjoy hiking, reading, gaming, and martial-arts-ing.             
-        </p>
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <!-- Image -->
+            <img src="resources/resized_mountain_photo.jpg">
+          </div>
+          <div class="about-col-2">
+            <!-- Text -->
+            <h1 class="subtitle">About Me</h1>
+            <p>
+              I first found out that coding was fun when making a game for my high school capstone project. 
+              Now, I am a 4th-year Computer Engineering student at UBC, 
+              who enjoys working on unique and challenging projects.
+              <br><br>I currently work at UBC IT Web Services, where I fix websites.
+              <br><br>In my free time, I also enjoy hiking, reading, gaming, and martial-arts-ing. 
+            </p>
+
+            <div class="tab-titles">
+              <!-- NOTE: I like specifying the event listener here, but it may be bad practice -->
+              <p class="tab-links active-link" onclick="opentab('skills', this)">Skills</p>
+              <p class="tab-links" onclick="opentab('experience', this)">Experience</p>
+              <p class="tab-links" onclick="opentab('education', this)">Education</p>
+            </div>
+
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li><span>Skill1</span><br>Skill me my man</li>
+                <li><span>Skill2</span><br>If I forget to replace this text</li>
+                <li><span>Skill3</span><br>You get to bully me</li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+              <ul>
+                <!-- TODO: put dates in span, good idea -->
+                <li><span>Experience1</span><br>My lawyer said to remove this line</li>
+                <li><span>Experience2</span><br>If I forget to replace this text</li>
+                <li><span>Experience3</span><br>You get to bully me</li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="education">
+              <ul>
+                <li><span>Education1</span><br>Education me my man</li>
+                <li><span>Education2</span><br>If I forget to replace this text</li>
+                <li><span>Education3</span><br>You get to bully me</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    
     <div id="portfolio">
-      <h1>Current projects</h1>
-
-      <div id="portfolio-container">
-        <div class="portfolio-item">
-          <img src="resources/logo.png">
-          <div class="portfolio-text">
-            <div>
-              <h1>This website</h1>
-              <p>Short description of this website</p>
-            </div>
-            <div>
-              <a href="https://github.com">Github: <i class="fa fa-github"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="portfolio-item">
-          <img src="resources/logo.png">
-          <div class="portfolio-text">
-            <div>
-              <h1>Video Game</h1>
-              <p>Short description of video game</p>
-            </div>
-            <div>
-              <a href="https://github.com">Github: <i class="fa fa-github"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <button>See full archive -></button>
-    </div>
-
-    <!-- Skills -->
-    <div id="skills">
-      <div class="work">
-        <h3>Web services</h3>
-        <p>Drupal, Docker, Vue.js, Cypress, Twig, JSON, HTML/CSS, JS, Version Control</p>
-      </div>
-
-      <div class="school">
-        <h3>School</h3>
-        <p>Java, C, C++, Verilog, ARM Assembly, Python, JS, Algo/Data Structures, SQL, Oracle, MongoDB</p>
-      </div>
-
-      <div class="personal">
-        <h3>Personal</h3>
-        <p>Python, JS, C#, Monogame</p>
+      <div class="container">
+        <h1 class="subtitle">Portfolio</h1>
       </div>
     </div>
 
-    <!-- Contact Info + Resume -->
-    <div id="contact">
-
-    </div>
+    <script src="index.js"></script>
   </body>
 </html>
