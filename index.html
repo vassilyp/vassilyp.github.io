@@ -12,19 +12,23 @@
 
     <!-- For icons -->
     <script src="https://kit.fontawesome.com/dcdc85afdd.js" crossorigin="anonymous"></script>
+
+    <!-- For website title icon -->
+    <link rel="icon" type="image/x-icon" href="/resources/favicon.ico">
   </head>
   <body>
     <!-- Navigation at the top -->
     <div id="navbar" class="sticky">
       <nav>
         <img src="resources/smaller-logo.png" class="logo">
-        <ul>
+        <ul id="sidemenu">
           <li><a href="/#">Home</a></li>
           <li><a href="/#about">About</a></li>
-          <!-- <li><a href="/#services">Services</a></li> -->
           <li><a href="/#portfolio">Portfolio</a></li>
           <li><a href="/#contact">Contact</a></li>
+          <i class="fa-solid fa-x" onclick="closemenu()"></i>
         </ul>
+        <i class="fa-solid fa-bars" onclick="openmenu()"></i>
       </nav>
     </div>
 
@@ -116,7 +120,7 @@
     </div>
 
     <!-- Contact -->
-    <div class="contact">
+    <div id="contact">
       <div class="container">
         <div class="row">
           <div class="contact-left">
@@ -126,14 +130,14 @@
               <a href="#"><i class="fa-brands fa-linkedin"></i></a>
               <a href="#"><i class="fa fa-github"></i></a>
             </div>
-            <a href="resources/Resume - Vassily Petrousevitch.pdf" class="btn btn-cv" target="_blank">Download CV/Resume</a>
+            <a href="resources/Resume - Vassily Petrousevitch.pdf" class="btn btn2" target="_blank">See CV/Resume</a>
           </div>
           <div class="contact-right">
             <form>
               <input type="text" name="Name" placeholder="Your name" required>
               <input type="email" name="Email" placeholder="Your email" required>
               <textarea name="Message" rows="6" placeholder="Your message"></textarea>
-              <button type="submit"></button>
+              <button type="submit" class="btn btn2">Submit</button>
             </form>
           </div>
         </div>

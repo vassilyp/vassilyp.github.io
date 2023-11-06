@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: #1d1d1d;
     color: whitesmoke;
@@ -110,6 +114,7 @@ nav ul li a:hover::after {
 
 #about {
     padding: 80px;
+    padding-top: 100px;
     color: #90adbb;
 }
 
@@ -205,6 +210,7 @@ nav ul li a:hover::after {
 
 #portfolio {
     padding: 50px;
+    padding-top: 80px;
     color: #90adbb;
 }
 
@@ -348,7 +354,121 @@ nav ul li a:hover::after {
     transition: transform 0.5s;
 }
 
-.btn.btn-cv {
+.btn.btn2 {
     display: inline-block;
-    /* background: #90adbb; */
+    background: #1d1d1d;
+
+    transition: background 0.5s;
+}
+
+.btn.btn2:hover {
+    background: #90adbb;
+}
+
+.contact-right form {
+    width: 100%;
+}
+
+form input, form textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+form .btn2 {
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+/* ------------- /contact ----------- */
+
+/* ------------ media queries (for small screens) --------- */
+
+nav .fa-solid {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    /* NOTE: if we add smthn to frontpage, deal with it here */
+
+    .frontpage-text {
+        margin-top: 60%;
+        font-size: 16px;
+    }
+
+    .frontpage-text h1 {
+        font-size: 30px;
+    }
+
+    nav .fa-solid {
+        display: block;
+        font-size: 25px;
+    }
+
+    nav ul {
+        background: #90adbb;
+        position: fixed;
+        top: 0;
+        /* Hidden to the right by default (width 200px) */
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        transition: right 0.5s;
+
+        z-index: 2;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 25px;
+    }
+
+    nav ul .fa-solid {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+    }
+
+    .subtitle {
+        font-size: 40px;
+    }
+
+    .about-col-1, .about-col-2 {
+        flex-basis: 100%;
+    }
+
+    .about-col-1 {
+        margin-bottom: 30px;
+    }
+
+    .about-col-2 p{
+        font-size: 14px;
+    }
+
+    #about {
+        padding: 15px;
+        padding-top: 100px;
+    }
+
+    #portfolio {
+        padding: 15px;
+        padding-top: 100px;
+    }
+
+    .contact-left, .contact-right {
+        flex-basis: 100%;
+    }
+
+    #contact {
+        padding-top: 100px;
+    }
 }
