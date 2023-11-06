@@ -205,6 +205,7 @@ nav ul li a:hover::after {
 
 #portfolio {
     padding: 50px;
+    color: #90adbb;
 }
 
 .portfolio-list {
@@ -232,6 +233,7 @@ nav ul li a:hover::after {
 
 .layer {
     width: 100%;
+    color: whitesmoke;
     /* Not visible by default (too low) */
     height: 0%;
 
@@ -299,3 +301,54 @@ nav ul li a:hover::after {
 /* ----------- /portfolio ---------- */
 
 /* ----------- contact ----------- */
+
+.contact-left {
+    color:whitesmoke;
+    flex-basis: 35%;
+}
+
+.contact-left h1 {
+    color: #90adbb;
+}
+
+.contact-right {
+    flex-basis: 60%;
+}
+
+.contact-left p {
+    margin-top: 30px;
+}
+
+.contact-left p i {
+    color: #90adbb;
+    margin-right: 15px;
+    font-size: 25px;
+
+    transition: transform 0.5s;
+}
+
+.social-icons {
+    margin-top: 30px;
+
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: whitesmoke;
+}
+
+.social-icons i:hover {
+    color: #90adbb;
+    transform: translateY(-5px);
+}
+
+.social-icons i {
+    transition: transform 0.5s;
+}
+
+.btn.btn-cv {
+    display: inline-block;
+    /* background: #90adbb; */
+}
