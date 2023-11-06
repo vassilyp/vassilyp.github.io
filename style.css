@@ -32,7 +32,6 @@ nav {
     
     /* high z-index to stay on top of other divs */
     z-index: 1000;  
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -202,7 +201,6 @@ nav ul li a:hover::after {
 .tab-contents.active-tab {
     display: block;
 }
-
 
 /* -------- /about-me ----------- */
 
