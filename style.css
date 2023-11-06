@@ -1,20 +1,37 @@
 /* FOR SIZING: use em/rem for font size, and %, vh, vw for margins/padding/etc */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #1d1d1d;
+    color: whitesmoke;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
 
 /* ---------- NAVBAR ----------- */
 .sticky {
-    position: fixed;
-    top: 0;
+    position: absolute;
     width: 100%;
 }
 
 nav {
     position: fixed;
-    top: 0;
+    top: 0px;
+    left: 0px;
     width: 100%;
     padding-right: 10px;
-    margin-left: -10px;
-
+    
+    /* high z-index to stay on top of other divs */
+    z-index: 1000;  
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -62,21 +79,11 @@ nav ul li a:hover::after {
 
 
 /* --------- frontpage ---------- */
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
-}
 
-body {
-    background: #080808;
-    color: #fff;
-}
 
 #frontpage {
     width: 100%;
-    height: 60vh;
+    height: 71vh;
 }
 
 #navbar {
@@ -100,135 +107,377 @@ body {
     margin-top: 5%;
 }
 
-/* --------- frontpage ---------- */
+/* --------- /frontpage ---------- */
 
 /* --------- about-me ---------- */
 
 #about {
-    width: 100%;
-    height: 120vh;
-
-    display: flex;
-    flex-direction: row;    
-    padding: 10%;
-}
-
-#about img {
-    max-width: 80%;
-    min-width: 300px;
-
-    /* height: auto;
-    width: auto; */
-    border-radius: 8px;
-}
-
-#about div {
-    margin-left: 5vw;
-    margin-right: 5vw;
-}
-
-#about > .text {
-    font-size: x-large
-}
-
-#about > .text > .about-me-title {
-    margin-bottom: 2vh;
-}
-
-#about > .text > p { 
-    margin-top: 1rem;
-}
-
-@media screen and (max-width: 1100px) {
-    #about > .text {
-        font-size: large;
-    }
-}
-
-/* TODO: change this */
-@media screen and (max-width: 800px) {
-    #about > .text {
-        font-size: small;
-    }
-}
-
-/* -------- about-me ----------- */
-
-/* --------- portfolio ---------- */
-
-#portfolio {
-    width: 100%;
-    height: 100vh;
-
-    padding-top: 150px;
-}
-
-#portfolio > h1 {
-    margin-left: 10%;
-}
-
-#portfolio-container {
-    display: flex;
-    flex-direction: row;
-    margin: 5% 0 2% 0;
-}
-
-.portfolio-item {
-    max-width: 30vw;
-    min-width: 250px;
-
-    margin: auto;
-    border: 3px solid rgb(71, 71, 71);
-    border-radius: 8px;
-}
-
-.portfolio-item > img {
-    height: auto;
-    width: 100%;
-    border-radius: 4px 4px 0px 0px;
-}
-
-.portfolio-text {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px;
-}
-
-.portfolio-text > div:last-child {
-    margin: auto 5px;
-}
-
-.portfolio-text > div > a {
-    text-decoration: none;
+    padding: 80px;
+    padding-top: 100px;
     color: #90adbb;
 }
 
-#portfolio > button {
-    /* size + shape of button */
+.row {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto 0 auto;
-    width: 80%;
-    padding: 5px 0 5px 0;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 
-    background-color: #080808;
+.about-col-1 {
+    flex-basis: 35%;
+}
+
+.about-col-1 img {
+    width: 80%;
+    border-radius: 15px;
+
+    /* TODO: check this over */
+    min-width: 350px;
+}
+
+.about-col-2 {
+    flex-basis: 60%;
+}
+
+.subtitle { 
+    font-size: 60px;
+    /* font-weight: 600; */
+}
+
+.about-col-2 p {
+    font-size: 24px;
+    padding-top: 16px;
+    color: whitesmoke;
+
+    /* I've set line-height = 4/3 font-size */
+    line-height: 32px;  
+}
+
+.tab-titles {
+    display: flex;
+    margin: 20px 0 40px;
+}
+
+.tab-links {
+    margin-right: 50px;
+    font-size: 18px;
+    /* TODO: idk whether font weight does anything */
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-links::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #90adbb;
+    position: absolute;
+    left: 0;
+    bottom: -8px; 
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after {
+    width: 50%;
+}
+
+.tab-contents ul li {
+    list-style: none;
+    margin: 10px 0;
     color: whitesmoke;
 }
 
-/* TODO: split in half horizontally so that pic isn't huge*/
-
-/* --------- portfolio ---------- */
-
-/* --------- skills ---------- */
-
-#skills {
-    width: 100%;
-    height: 100vh;
+.tab-contents ul li span {
+    color: #90adbb;
+    font-size: 14px;
+    line-height: 28px;
 }
 
-/* --------- skills ---------- */
+.tab-contents {
+    display: none;
+}
 
-/* --------- contact-me ---------- */
+.tab-contents.active-tab {
+    display: block;
+}
 
-/* --------- contact-me ---------- */
+/* -------- /about-me ----------- */
+
+/* --------- portfolio --------- */
+
+#portfolio {
+    padding: 50px;
+    padding-top: 80px;
+    color: #90adbb;
+}
+
+.portfolio-list {
+    display: grid;
+
+    /* auto fit the portfolio items, with minimum width 250px before it wraps */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.portfolio-item {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-item img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+
+    transition: transform 0.5s;
+}
+
+.layer {
+    width: 100%;
+    color: whitesmoke;
+    /* Not visible by default (too low) */
+    height: 0%;
+
+    background: linear-gradient(rgba(0, 0, 0, 0.6), #00aaff);
+    border-radius: 10px;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    transition: height 0.5s;
+}
+
+.layer h3 {
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.layer a {
+    margin-top: 20px;
+    color: #90adbb;
+    text-decoration: none;
+    font-size: 32px;
+
+    /* Circle around link icon */
+    line-height: 60px;
+    background-color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center; 
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-item:hover .layer {
+    height: 100%;
+}
+
+.btn {
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #90adbb;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    
+    transition: background 0.5s;
+}
+
+.btn:hover {
+    background: #90adbb;
+}
+
+/* ----------- /portfolio ---------- */
+
+/* ----------- contact ----------- */
+
+.contact-left {
+    color:whitesmoke;
+    flex-basis: 35%;
+}
+
+.contact-left h1 {
+    color: #90adbb;
+}
+
+.contact-right {
+    flex-basis: 60%;
+}
+
+.contact-left p {
+    margin-top: 30px;
+}
+
+.contact-left p i {
+    color: #90adbb;
+    margin-right: 15px;
+    font-size: 25px;
+
+    transition: transform 0.5s;
+}
+
+.social-icons {
+    margin-top: 30px;
+
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: whitesmoke;
+}
+
+.social-icons i:hover {
+    color: #90adbb;
+    transform: translateY(-5px);
+}
+
+.social-icons i {
+    transition: transform 0.5s;
+}
+
+.btn.btn2 {
+    display: inline-block;
+    background: #1d1d1d;
+
+    transition: background 0.5s;
+}
+
+.btn.btn2:hover {
+    background: #90adbb;
+}
+
+.contact-right form {
+    width: 100%;
+}
+
+form input, form textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+form .btn2 {
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+/* ------------- /contact ----------- */
+
+/* ------------ media queries (for small screens) --------- */
+
+nav .fa-solid {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    /* NOTE: if we add smthn to frontpage, deal with it here */
+
+    .frontpage-text {
+        margin-top: 60%;
+        font-size: 16px;
+    }
+
+    .frontpage-text h1 {
+        font-size: 30px;
+    }
+
+    nav .fa-solid {
+        display: block;
+        font-size: 25px;
+    }
+
+    nav ul {
+        background: #90adbb;
+        position: fixed;
+        top: 0;
+        /* Hidden to the right by default (width 200px) */
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        transition: right 0.5s;
+
+        z-index: 2;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 25px;
+    }
+
+    nav ul .fa-solid {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+    }
+
+    .subtitle {
+        font-size: 40px;
+    }
+
+    .about-col-1, .about-col-2 {
+        flex-basis: 100%;
+    }
+
+    .about-col-1 {
+        margin-bottom: 30px;
+    }
+
+    .about-col-2 p{
+        font-size: 14px;
+    }
+
+    #about {
+        padding: 15px;
+        padding-top: 100px;
+    }
+
+    #portfolio {
+        padding: 15px;
+        padding-top: 100px;
+    }
+
+    .contact-left, .contact-right {
+        flex-basis: 100%;
+    }
+
+    #contact {
+        padding-top: 100px;
+    }
+}
+
+
+/* --------- /media queries ----------*/
+
+/* --------- Email confirmation ------ */
+
+#msg {
+    color: whitesmoke;
+    margin-top: -40px;
+    display: block;
+}
