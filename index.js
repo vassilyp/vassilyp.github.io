@@ -22,3 +22,24 @@ function openmenu() {
 function closemenu() {
     sidemenu.style.right = "-200px";
 }
+
+
+// Email handling (from https://github.com/jamiewilson/form-to-google-sheets)
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxeOesiYSiBWdGDI9UXphbliC6yuaDcFMMEgyntKgjGEVXPL6q0N0pEncc2cyJL3MYROA/exec'
+const form = document.forms['submit-to-google-sheet']
+const msg = document.getElementById('msg');
+
+form.addEventListener('submit', e => {
+e.preventDefault()
+fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => {
+        msg.innerHTML = "Succesfully sent message!";
+        setTimeout(() => {
+            msg.innerHTML = "";
+        }, 5000);
+        form.reset();
+    })
+    .catch(error => console.error('Error!', error.message))
+})
+

@@ -472,3 +472,14 @@ nav .fa-solid {
         padding-top: 100px;
     }
 }
+
+
+/* --------- /media queries ----------*/
+
+/* --------- Email confirmation ------ */
+
+#msg {
+    color: whitesmoke;
+    margin-top: -40px;
+    display: block;
+}
