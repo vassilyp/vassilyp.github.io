@@ -1,5 +1,5 @@
 # vassily-petrousevitch.github.io
-This is a repo for my personal web portfolio
+This is a repo for my (old) personal web portfolio.
 
 Check out the website here: [https://Vassily-Petrousevitch.github.io](https://vassily-petrousevitch.github.io/)
 
